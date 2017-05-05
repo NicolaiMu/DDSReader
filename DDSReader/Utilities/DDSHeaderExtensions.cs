@@ -17,7 +17,7 @@ namespace DDSReader.Utilities
 
         public static uint MipmapCount(this DDSHeader header)
         {
-            return !header.HasMipmaps() ? 1 : header.dwMipMapCount;
+            return 1; // ignore mipmaps.. !header.HasMipmaps() ? 1 : header.dwMipMapCount;
         }
 
         public static uint TextureDepth(this DDSHeader header)
@@ -32,7 +32,7 @@ namespace DDSReader.Utilities
 
         public static uint Height(this DDSHeader header)
         {
-            return header.dwWidth;
+            return header.dwHeight;
         }
 
         public static PixelFormat GetPixelFormat(this DDSHeader header)

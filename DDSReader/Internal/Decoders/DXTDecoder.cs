@@ -14,7 +14,8 @@ namespace DDSReader.Internal.Decoders
 
         protected static int GetDataSize(uint width, uint height, int blocksize)
         {
-            return (int) (((width + 3) / 4) * ((height + 3) / 4) * blocksize);
+            return (int)((width * 4) * height);
+            // return (int) (((width + 3) / 4) * ((height + 3) / 4) * blocksize);
         }
 
         protected static RGBAColor GetDXTColor(ushort dxtColor)

@@ -20,7 +20,7 @@ namespace DDSReader.Internal.Decoders
 
             var readCount = await dataSource.ReadAsync(compressedData, 0, compressedData.Length);
 
-            if (readCount != compressedData.Length)
+            if (readCount > compressedData.Length)
             {
                 throw new IOException("Not enough data!");
             }
